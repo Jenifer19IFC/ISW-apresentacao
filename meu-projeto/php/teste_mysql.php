@@ -1,8 +1,8 @@
 <?php
 $servername = "mysql"; 
-$username = "test";
+$username = "teste";
 $password = "jenifer123";
-$database = "bancoteste"; 
+$database = "banco_teste"; 
 
 $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
