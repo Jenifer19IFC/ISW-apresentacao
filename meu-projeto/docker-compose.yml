@@ -4,8 +4,8 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: jenifer123
-      MYSQL_DATABASE: bancoteste
-      MYSQL_USER: test
+      MYSQL_DATABASE: banco_teste
+      MYSQL_USER: teste
       MYSQL_PASSWORD: jenifer123
     ports:
       - "3306:3306"
