@@ -1,0 +1,33 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: jenifer123
+      MYSQL_DATABASE: bancoteste
+      MYSQL_USER: test
+      MYSQL_PASSWORD: jenifer123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - rede-projeto
+
+  php:
+    image: php:7.4-apache
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    networks:
+      - rede-projeto
+
+volumes:
+  mysql_data:
+
+networks:
+  rede-projeto:
+    driver: bridge
